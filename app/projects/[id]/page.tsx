@@ -62,7 +62,12 @@ const projects = [
   }
 ]
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
+export default function ProjectPage({
+  params,
+}: {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
   const project = projects.find(p => p.id === params.id)
   
   if (!project) {
