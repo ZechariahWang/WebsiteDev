@@ -33,7 +33,7 @@ const projects = [
   },
   {
     id: 'project-5',
-    title: 'Autonomous Vehicle Simulator',
+    title: 'AI Autonomous Vehicle Simulator',
     description: 'Real-time optimal path planning for an autonomous vehicle.',
     technologies: ['ROS2', 'Docker', 'Foxglove'],
     image: '/WATonomous.png'
@@ -87,7 +87,7 @@ const page = () => {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center min-h-[80vh] px-4 text-center">
+      <section className="flex flex-col items-center justify-center min-h-screen px-4 text-center">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#ff34a1] to-[#00ffc3] bg-clip-text text-transparent">
           Hi, I'm Zech
         </h1>
@@ -194,7 +194,7 @@ const page = () => {
               </div>
               <div className="p-4 bg-accent rounded-lg">
                 <h3 className="font-semibold mb-2">Medtech</h3>
-                <p className="text-sm text-muted-foreground">.NET, WPF, C#, C++</p>
+                <p className="text-sm text-muted-foreground">.NET, WPF, Moq, Nunit</p>
               </div>
             </div>
           </div>

@@ -1,65 +1,70 @@
 import React from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 
 const projects = [
   {
     id: 'project-1',
-    title: 'E-commerce Platform',
-    description: 'A full-featured e-commerce platform with real-time inventory management and secure payment processing.',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    image: '/project-1.jpg',
-    longDescription: `This e-commerce platform was built with a focus on scalability and user experience. 
-    Features include:
-    - Real-time inventory management
-    - Secure payment processing with Stripe integration
-    - User authentication and authorization
-    - Product search and filtering
-    - Shopping cart functionality
-    - Order tracking and management
-    
-    The platform handles thousands of daily transactions and provides a seamless shopping experience for users.`,
-    githubUrl: 'https://github.com/yourusername/ecommerce-platform',
-    liveUrl: 'https://ecommerce-platform-demo.com'
+    title: 'Eclipse Robotics',
+    description: 'A full set of essentials tools required for the VEX Robotics Competition.',
+    technologies: ['Path Planning', 'React', 'MongoDB'],
+    image: '/Eclipse.jpg',
+    longDescription: `Eclipse Robotics is a collection of tools that I have developed to help high school students in the VEX Robotics Competition. Eclipse consists of a fully autonomous robotics library, AI virtual robot envrionment simulator, and a fullstack web application for scouting other teams during the competition. Altogether, Eclipse Robotics has earned 37+ awards throughout its three years of development, and has ranked 1st in Alberta, 6th in Canada, and top 0.26% globally in the VRC competition.`,
+    githubUrl: 'https://github.com/ZechariahWang/Eclipse-Robot_Framework?tab=readme-ov-file',
+    liveUrl: 'https://github.com/ZechariahWang/TeamProfiler'
   },
   {
     id: 'project-2',
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates and team collaboration features.',
-    technologies: ['Next.js', 'TypeScript', 'Firebase'],
-    image: '/project-2.jpg',
-    longDescription: `The Task Management App is designed to help teams stay organized and productive. 
-    Key features include:
-    - Real-time task updates
-    - Team collaboration tools
-    - Task assignment and tracking
-    - Progress visualization
-    - File attachments
-    - Deadline management
-    
-    Built with modern web technologies, it provides a smooth and intuitive user experience.`,
-    githubUrl: 'https://github.com/yourusername/task-manager',
-    liveUrl: 'https://task-manager-demo.com'
+    title: 'Mecha Mayhem',
+    description: 'Canada\'s largest robotics tournament. ',
+    technologies: ['React', 'Next.js', 'Tailwind'],
+    image: '/Mech3.png',
+    longDescription: `Mecha Mayhem is Canada's largest robotics tournament, with over 3000 attendees and 200+ teams from middle school, high school, and university. I was on 2024 software team, where I developed a fullstack website in Next.js and Tailwind CSS for the competition. I also developed an award and team data analytics tool using the RobotEvents API, which displays the awards and stats of each team that competed.`,
+    githubUrl: 'https://github.com/westmech/Mecha-Mayhem-Frontend-2025',
+    liveUrl: 'https://www.mechamayhem.ca/'
   },
   {
     id: 'project-3',
-    title: 'Portfolio Website',
-    description: 'A responsive portfolio website showcasing creative work and professional experience.',
-    technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
-    image: '/project-3.jpg',
-    longDescription: `This portfolio website was designed to showcase my work and skills in an engaging way. 
-    Features include:
-    - Responsive design for all devices
-    - Smooth animations and transitions
-    - Project showcase with detailed case studies
-    - Contact form integration
-    - Blog section
-    - SEO optimization
-    
-    The website demonstrates my ability to create modern, performant web applications.`,
-    githubUrl: 'https://github.com/yourusername/portfolio',
-    liveUrl: 'https://your-portfolio.com'
+    title: 'AI Interview Trainer',
+    description: 'Personalized AI interview assistant for both technical and behavioral interviews.',
+    technologies: ['Next.js', 'Firebase', 'Vapi', 'Gemini'],
+    image: '/InterviewTrainer.png',
+    longDescription: `I developed a real-time AI interview platform leverages Vapi Voice Agents to simulate natural conversational interviews. It features a 108-term keyword normalization system that standardizes tech stack inputs, allowing for consistent and accurate voice-driven interactions. The platform includes live voice processing and transcription capabilities to enhance real-time responsiveness. Additionally, it integrates Firebase authentication within a Next.js framework to provide secure user sign-in and access to personalized features such as profiles, recent interviews, and detailed interview history.`,
+    githubUrl: 'https://github.com/ZechariahWang/Waterloo-AI-Interview-Trainer',
+    liveUrl: 'https://waterloo-interview-trainer-ashen.vercel.app/sign-in'
+  },
+  {
+    id: 'project-4',
+    title: 'AI Mental Health Chatbot',
+    description: 'AI chatbot for mental health support.',
+    technologies: ['PyTorch', 'NLTK/NLP', 'Customtkinter'],
+    image: '/MentalSupport.png',
+    longDescription: `AI intelligent chatbot designed to support mental health conversations by understanding and responding to user input with empathy and relevance. Built using PyTorch, it features a 3-layer fully connected neural network trained to classify user intent with high accuracy. Through iterative fine-tuning and optimization, the model achieved a 15% improvement in intent classification. The system utilizes NLTK for natural language preprocessing, including tokenization and lemmatization, and is deployed within a CustomTKinter interface to provide an accessible and responsive user experience tailored for mental wellness support.`,
+    githubUrl: 'https://github.com/ZechariahWang/ChatbotApp',
+    liveUrl: 'https://github.com/ZechariahWang/ChatbotApp'
+  },
+  {
+    id: 'project-5',
+    title: 'AI Autonomous Vehicle Simulator',
+    description: 'Real-time optimal path planning for an autonomous vehicle.',
+    technologies: ['ROS2', 'Docker', 'Foxglove'],
+    image: '/WATonomous.png',
+    longDescription: `This project simulates autonomous vehicle navigation using a ROS2 publisher-subscriber architecture built on the DDS protocol. It features real-time obstacle avoidance logic by generating a dynamic cost-map from LiDAR and odometry data. The system combines the Pure Pursuit algorithm with A* path planning to enable efficient and adaptive robot movement, allowing the vehicle to detect and navigate around obstacles in real time.`,
+    githubUrl: 'https://github.com/ZechariahWang/Watonomous-ASD',
+    liveUrl: 'https://www.youtube.com/watch?v=4ZobtJzNd3g'
+  },
+  {
+    id: 'project-6',
+    title: 'Adult Entertainment Robot',
+    description: 'Robot entertainment switch for all ages (but mostly adults).',
+    technologies: ['RobotC', 'Path Planning', 'Localization'],
+    image: '/AE.jpg',
+    longDescription: `This project simulates intelligent robot behavior using a boundary-aware navigation system written in C for the EV3 platform. It leverages gyroscopic, ultrasonic, sound, and touch sensors to build a dynamic map of boundaries and obstacles. The robot uses a custom PID-controlled movement and rotation system to traverse predefined regions while adjusting its behavior based on human proximity and difficulty level. By integrating geometric boundary detection algorithms and real-time motion planning, the robot can respond to switch interactions, avoid obstacles, and adapt its path using randomized maneuvers, creating a robust framework for autonomous and reactive movement within a confined environment.`,
+    githubUrl: 'https://github.com/ZechariahWang/MTE-100-Final-Project',
+    liveUrl: 'https://github.com/ZechariahWang/MTE-100-Final-Project'
   }
+
 ]
 
 export default function ProjectPage({
@@ -98,7 +103,14 @@ export default function ProjectPage({
         </Link>
 
         <div className="space-y-8">
-          <div className="aspect-video bg-accent rounded-lg mb-8"></div>
+          <div className="aspect-video bg-accent rounded-lg mb-8 relative">
+          <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+          </div>
           
           <h1 className="text-4xl font-bold">{project.title}</h1>
           
@@ -122,7 +134,7 @@ export default function ProjectPage({
                 rel="noopener noreferrer"
                 className="px-6 py-3 border border-border rounded-lg hover:bg-accent transition-colors"
               >
-                Live Demo
+                Demo
               </a>
             )}
           </div>
