@@ -40,8 +40,8 @@ const projects = [
   },
   {
     id: 'project-6',
-    title: 'Adult Entertainment Robot',
-    description: 'Robot entertainment switch for all ages (but mostly adults).',
+    title: 'The Nothing Robot',
+    description: 'The robot that does nothing.',
     technologies: ['RobotC', 'Path Planning', 'Localization'],
     image: '/AE.jpg'
   },
