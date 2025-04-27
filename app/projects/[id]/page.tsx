@@ -60,7 +60,7 @@ const projects = [
     description: 'Robot entertainment switch that does nothing.',
     technologies: ['RobotC', 'Path Planning', 'Localization'],
     image: '/AE.jpg',
-    longDescription: `This project is a simple switch game, but with a twist: the robot simulates intelligent robot behavior using a boundary-aware navigation system written in C for the EV3 platform. It leverages gyroscopic, ultrasonic, sound, and touch sensors to build a dynamic map of boundaries and obstacles, and make it harder for the user to flip the switch. The robot uses a custom PID-controlled movement and rotation system to traverse predefined regions while adjusting its behavior based on human proximity and difficulty level. By integrating geometric boundary detection algorithms and real-time motion planning, the robot can respond to switch interactions, avoid obstacles, and adapt its path using randomized maneuvers.`,
+    longDescription: `This project is a simple switch game, but with a twist: it builds a dynamic map of boundaries and obstacles to make it harder for the user to flip the switch. The robot simulates intelligent robot behavior using a boundary-aware navigation system written in C for the EV3 platform. The robot uses a custom PID-controlled movement and rotation system to traverse predefined regions while adjusting its behavior based on human proximity and difficulty level. By integrating geometric boundary detection algorithms and real-time motion planning, the robot can respond to switch interactions, avoid obstacles, and adapt its path using randomized maneuvers.`,
     githubUrl: 'https://github.com/ZechariahWang/MTE-100-Final-Project',
     liveUrl: 'https://github.com/ZechariahWang/MTE-100-Final-Project'
   }
