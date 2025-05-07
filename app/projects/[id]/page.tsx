@@ -1,7 +1,10 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const projects = [
   {
@@ -70,10 +73,11 @@ const projects = [
 export default function ProjectPage({
   params,
 }: {
-  params: { id: string }
+  params: Promise<{ id: string }>
   searchParams: { [key: string]: string | string[] | undefined }
 }) {
-  const project = projects.find(p => p.id === params.id)
+  const resolvedParams = React.use(params)
+  const project = projects.find(p => p.id === resolvedParams.id)
   
   if (!project) {
     notFound()
@@ -81,10 +85,10 @@ export default function ProjectPage({
 
   return (
     <main className="min-h-screen py-20 px-4">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto space-y-4">
         <Link 
           href="/#projects" 
-          className="inline-flex items-center text-muted-foreground hover:text-foreground mb-8"
+          className="inline-flex items-center text-muted-foreground hover:text-foreground"
         >
           <svg 
             className="w-4 h-4 mr-2" 
@@ -102,58 +106,63 @@ export default function ProjectPage({
           Back to Projects
         </Link>
 
-        <div className="space-y-8">
-          <div className="aspect-video bg-accent rounded-lg mb-8 relative">
+        <div className="aspect-video bg-accent rounded-lg relative">
           <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                  />
-          </div>
-          
-          <h1 className="text-4xl font-bold">{project.title}</h1>
-          
-          <p className="text-xl text-muted-foreground">{project.description}</p>
-          
-          <div className="flex gap-4">
-            {project.githubUrl && (
-              <a 
-                href={project.githubUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-              >
-                View on GitHub
-              </a>
-            )}
-            {project.liveUrl && (
-              <a 
-                href={project.liveUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="px-6 py-3 border border-border rounded-lg hover:bg-accent transition-colors"
-              >
-                Demo
-              </a>
-            )}
-          </div>
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover"
+          />
+        </div>
+        
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-bold"
+        >
+          {project.title}
+        </motion.h1>
+        
+        <p className="text-xl text-muted-foreground">{project.description}</p>
+        
+        <div className="flex gap-4">
+          {project.githubUrl && (
+            <a 
+              href={project.githubUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              View on GitHub
+            </a>
+          )}
+          {project.liveUrl && (
+            <a 
+              href={project.liveUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-6 py-3 border border-border rounded-lg hover:bg-accent transition-colors"
+            >
+              Demo
+            </a>
+          )}
+        </div>
 
-          <div className="flex gap-2">
-            {project.technologies.map((tech) => (
-              <span key={tech} className="px-3 py-1 text-sm bg-accent rounded-full">
-                {tech}
-              </span>
-            ))}
-          </div>
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((tech) => (
+            <span key={tech} className="px-3 py-1 text-sm bg-accent rounded-full">
+              {tech}
+            </span>
+          ))}
+        </div>
 
-          <div className="prose prose-invert max-w-none">
-            {project.longDescription.split('\n').map((paragraph, index) => (
-              <p key={index} className="text-muted-foreground">
-                {paragraph}
-              </p>
-            ))}
-          </div>
+        <div className="prose prose-invert max-w-none space-y-6">
+          {project.longDescription.split('\n').map((paragraph, index) => (
+            <p key={index} className="text-muted-foreground">
+              {paragraph}
+            </p>
+          ))}
         </div>
       </div>
     </main>
