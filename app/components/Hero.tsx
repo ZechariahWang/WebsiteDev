@@ -18,18 +18,15 @@ const Hero = () => {
         />
       </div>
       <div className="relative z-10 flex flex-col items-center">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+        <h1 
           className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#ff34a1] to-[#00ffc3] bg-clip-text text-transparent"
         >
           Hi, I'm Zech
-        </motion.h1>
+        </h1>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.2, delay: 0.3, ease: "easeOut" }}
           className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl"
         >
           Mechatronics Engineering at the University of Waterloo
@@ -37,7 +34,7 @@ const Hero = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.2, delay: 0.6, ease: "easeOut" }}
           className="flex gap-4 justify-center"
         >
           <Link 
@@ -57,7 +54,7 @@ const Hero = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={{ duration: 0.2, delay: 0.9, ease: "easeOut" }}
           className="flex gap-4 mt-8"
         >
           <a 
